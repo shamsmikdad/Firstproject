@@ -9,3 +9,5 @@ in "CMD" => git add "filename.html"
 in "CMD" => git commit -m "add your commit"
 in "CMD" => git push
 sign in browser => login into github
+
+https://learnwithbilal.github.io/bilal/
