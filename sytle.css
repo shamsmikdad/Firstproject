@@ -2,3 +2,7 @@ h1 {
     color: tomato;
     text-align: center;
 }
+ul li {
+    display: inline;
+    margin: 15px;
+}
