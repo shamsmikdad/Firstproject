@@ -6,17 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <script>
-    let counter = 9999999;
-    function count () {
-        counter = counter*counter;
-        document.querySelector("h1").innerHTML = counter;
-    }
-    document.addEventListener("DOMContentLoaded", ()=> {
-        setInterval(count, 1000);
-    });
+    if(! localStorage.getItem("counter"))
+    {localStorage.setItem("counter",0)};
+
+      function count () {
+          let counter=localStorage.getItem("counter");
+          counter ++;
+          document.querySelector("h1").innerHTML = counter ;
+          localStorage.setItem("counter", counter);
+      }
+      document.addEventListener("DOMContentLoaded", ()=> {
+         document.querySelector("#add").onclick = count;
+         document.querySelector("h1").innerHTML = localStorage.getItem("counter");
+         //     setInterval(count, 1000);
+        
+      });
+     
 </script>
 </head>
 <body>
     <h1>0</h1>
+    <button id="add">add</button>
 </body>
 </html>
