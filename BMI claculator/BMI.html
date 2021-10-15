@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="javasc.js"></script> -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () =>{
+        let weight = document.querySelector("#weight");
+        let height = document.querySelector("#height");
+        let submit = document.querySelector("#submit");
+        
+        if (! UWeight < 0 && UHeight < 0){
+            submit.disabled=true;
+        };
+        else {}
+        // document.querySelector("#weight").onchange = ()=>{
+        //     if (myweight < 50 && myweight > 150){};}
+    document.querySelector("form").onsubmit = ()=>{
+        const UWeight = weight.value;
+        const UHeight = height.value/100;
+        const BMI = UWeight/Math.pow(UHeight,2);
+        console.log (BMI);
+        return false;
+        }
+    })
+    </script>
+</head>
+<body>
+    <h1>BMI "body mass index"</h1>
+    <form id="fromcalc">
+        <label for="weight">inter your Weight in "kilograms"</label>
+        <input type="text" id="weight" placeholder="insert your weight">
+        <br>
+        <label for="height">inter your height in "centimeters"</label>
+        <input type="text" id="height" placeholder="insert your height">
+        <input type="submit" value="calce" id="submit">
+    </form>
+    <div>
+        <img src="" alt="">
+    </div>
+</body>
+</html>

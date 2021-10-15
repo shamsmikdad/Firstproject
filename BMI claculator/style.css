@@ -1,0 +1,7 @@
+label, input { 
+    margin: 10px;
+    position:relative;
+    display: flex;
+    align-items:center;
+    top: 20px;
+}
