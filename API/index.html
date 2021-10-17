@@ -8,28 +8,63 @@
     <link rel="stylesheet" href="style.css">
     <!-- <script src="main.js"></script> -->
     <script>
+        //variabels
+        
+
+
         document.addEventListener("DOMContentLoaded", function (){
+            //Qestion this would be befor the DOM
+            let FROM = document.querySelector("#FROM");
+            let VALUE = document.querySelector("#VALUE");
+            let TO =  document.querySelector("#TO");
+            let SUBMIT =  document.querySelector("#SUBMIT");
+            let RESULTE =  document.querySelector("#RESULTE");
+
+
             fetch ("https://api.exchangerate.host/latest").then ( 
                 (response)=>response.json().then((data)=>{
-                    console.log(data);  
+                        document.querySelector("form").onsubmit = function (){
+                           const from = FROM.value.toUpperCase();
+                        //    data.base = from;
+                        //    FROM.onkeydown = function(){
+                        //        data.base=from.value
+                        //    };
+                           const to = TO.value.toUpperCase();
+                           const value= VALUE.value;
+                            const resulte = data.rates[to]*value;
+                            RESULTE.innerHTML= `the result is ${resulte.toFixed(2)}`;
+                            console.log(data.base);  
+                            return false;
+                            
+                        };
                 })
                  
                 )
             
         })
+        // document.addEventListener("DOMContentLoaded", function () {
+        // fetch("https://api.exchangerate.host/latest?base=USD").then(
+        //   (response) =>
+        //     response
+        //       .json()
+        //       .then((data) => {
+        //         document.querySelector("form").onsubmit = function () {
+        //           const currency = document.querySelector("#F").value.toUpperCase();
     </script>
 </head>
 <body>
     <h1> curency exchange </h1>
     <form>
-        <label for="From"> what the curenncy you want to exchange from</label>
-        <input type="text" id="From" placeholder="inter your currency">
-        <input type="number" id="From-value" placeholder="inter the value">
+        <label for="FROM"> what the curenncy you want to exchange from</label>
+        <input type="text" id="FROM" placeholder="inter your currency">
+        <input type="number" id="VALUE" placeholder="inter the value">
         <br>
-        <label for="From"> what the curenncy you want to exchange To</label>
-        <input type="text" id="To" placeholder="inter the other currency">
-        <input type="number" id="To-value" placeholder="inter the value">
-        <input type="submit" id="submit" value="convert">
+        <label for="TO"> what the curenncy you want to exchange To</label>
+        <input type="text" id="TO" placeholder="inter the other currency">
+        <!-- <input type="number" id="To-value" placeholder="inter the value"> -->
+        <input type="submit" id="SUBMIT" value="convert">
+        <h2 id="RESULTE"> the resulte is:</h2>
+
     </form>
 </body>
 </html>
