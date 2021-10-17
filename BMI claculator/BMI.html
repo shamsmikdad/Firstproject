@@ -12,25 +12,41 @@
         let weight = document.querySelector("#weight");
         let height = document.querySelector("#height");
         let submit = document.querySelector("#submit");
-        
-        if (! UWeight < 0 && UHeight < 0){
-            submit.disabled=true;
-        };
-        else {}
+        let result = document.querySelector("#result");
+        let cat =document.querySelector("#BMICat");
+        // if (! UWeight < 0 && UHeight < 0){
+        //     submit.disabled=true;
+        // }
+        // else {
         // document.querySelector("#weight").onchange = ()=>{
         //     if (myweight < 50 && myweight > 150){};}
-    document.querySelector("form").onsubmit = ()=>{
+        document.querySelector("form").onsubmit = ()=>{
         const UWeight = weight.value;
         const UHeight = height.value/100;
-        const BMI = UWeight/Math.pow(UHeight,2);
-        console.log (BMI);
+        const newBMI = UWeight/Math.pow(UHeight,2);
+        // const newBMI = BMI.toFixed(1);
+         if(newBMI < 18.5 ){ cat.innerHTML= " Underweight";}
+         else if(newBMI >= 18.5 && newBMI < 25){cat.innerHTML= " Normal weight";}
+         else if(newBMI >= 25 && newBMI < 30){cat.innerHTML= " Normal weight";}
+         else if(newBMI> 30){cat.innerHTML= " Obesity";}
+         else {cat.innerHTML= "";}
+         result.innerHTML= newBMI;
         return false;
-        }
+                 
+        //  return false;
+        //  localStorage.setItem("BMIresult","BMI");
+    }
+    
+        //  result.innerHTML=localStorage.getItem("BMIresult");
+        // Underweight = <18.5
+        // Normal weight = 18.5–24.9
+        // Overweight = 25–29.9
+        // Obesity = BMI of 30 or greater
     })
     </script>
 </head>
 <body>
-    <h1>BMI "body mass index"</h1>
+    <h1 >BMI body mass index</h1>
     <form id="fromcalc">
         <label for="weight">inter your Weight in "kilograms"</label>
         <input type="text" id="weight" placeholder="insert your weight">
@@ -38,8 +54,14 @@
         <label for="height">inter your height in "centimeters"</label>
         <input type="text" id="height" placeholder="insert your height">
         <input type="submit" value="calce" id="submit">
+        
     </form>
-    <div>
+    <br>
+    <h1 id="result"> </h1>
+    <br>
+    <h1 id="BMICat"> </h1>
+
+    <div >
         <img src="" alt="">
     </div>
 </body>
