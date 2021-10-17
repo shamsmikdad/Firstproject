@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>currency converter</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="main.js"></script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function (){
+            fetch ("https://api.exchangerate.host/latest").then ( 
+                (response)=>response.json().then((data)=>{
+                    console.log(data);  
+                })
+                 
+                )
+            
+        })
+    </script>
+</head>
+<body>
+    <h1> curency exchange </h1>
+    <form>
+        <label for="From"> what the curenncy you want to exchange from</label>
+        <input type="text" id="From" placeholder="inter your currency">
+        <input type="number" id="From-value" placeholder="inter the value">
+        <br>
+        <label for="From"> what the curenncy you want to exchange To</label>
+        <input type="text" id="To" placeholder="inter the other currency">
+        <input type="number" id="To-value" placeholder="inter the value">
+        <input type="submit" id="submit" value="convert">
+    </form>
+</body>
+</html>

@@ -1,0 +1,4 @@
+body , form , label , input ,h1{
+    display: block;
+    margin: 15px;
+}
