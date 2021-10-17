@@ -14,6 +14,8 @@
         let submit = document.querySelector("#submit");
         let result = document.querySelector("#result");
         let cat =document.querySelector("#BMICat");
+        let pictures =document.querySelector("#pictures");
+
         // if (! UWeight < 0 && UHeight < 0){
         //     submit.disabled=true;
         // }
@@ -25,9 +27,12 @@
         const UHeight = height.value/100;
         const newBMI = UWeight/Math.pow(UHeight,2);
         // const newBMI = BMI.toFixed(1);
-         if(newBMI < 18.5 ){ cat.innerHTML= " Underweight";}
-         else if(newBMI >= 18.5 && newBMI < 25){cat.innerHTML= " Normal weight";}
-         else if(newBMI >= 25 && newBMI < 30){cat.innerHTML= " Normal weight";}
+         if(newBMI < 18.5 ){ cat.innerHTML= " Underweight";
+         document.createElement
+        }
+         else if(newBMI >= 18.5 && newBMI < 25){cat.innerHTML= " Normal weight";
+        }
+         else if(newBMI >= 25 && newBMI < 30){cat.innerHTML= " over weight";}
          else if(newBMI> 30){cat.innerHTML= " Obesity";}
          else {cat.innerHTML= "";}
          result.innerHTML= newBMI;
@@ -61,7 +66,7 @@
     <br>
     <h1 id="BMICat"> </h1>
 
-    <div >
+    <div id="pictures">
         <img src="" alt="">
     </div>
 </body>
