@@ -19,12 +19,13 @@
 # print (dic_friends("key01"))
 # for i in friends[3]:
 #     print (i)
+import datetime
 name = input("inter your name: ")
-year  = int(input("inter your age: "))
+youryear  = int(input("inter your age: "))
 weight= int(input("inter your weight in Kg: "))
 height= int(input("inter your height in Cm: "))/100
 # age = 2021-
-person= (f"your name is {name},and age is {2021-year}")
+person= (f"your name is {name},and age is {datetime.today().year-youryear}")
 calc = weight/(height*height)
 print(format(calc, ".2f"))
 if (calc < 18.5 and calc > 0):
