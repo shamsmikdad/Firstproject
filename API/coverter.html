@@ -21,6 +21,8 @@
             let RESULTE =  document.querySelector("#RESULTE");
             // FROM.onkeydown = function(){const from = FROM.value.toUpperCase();};
             // let Q = "AED";
+            // let from = FROM.value.toUpperCase();                         
+
             
                 fetch (`https://api.exchangerate.host/latest?base=${from}`).then ( 
                 (response)=>response.json().then((data)=>{
